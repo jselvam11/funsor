@@ -16,11 +16,11 @@ def _disallow_set_backend(*args):
 
 
 def pytest_runtest_setup(item):
-    np.random.seed(0)
+    #np.random.seed(0)
     if _BACKEND == "torch":
         import pyro
 
-        pyro.set_rng_seed(0)
+        #pyro.set_rng_seed(0)
         pyro.enable_validation(True)
     elif _BACKEND == "jax":
         from jax.config import config
